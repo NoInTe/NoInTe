@@ -10,47 +10,186 @@ body {
     flex-direction: column;
 }
 
+main {
+
+    position: relative;
+}
+
+.viewport {
+    scroll-snap-align: start;
+}
+
 .cabecera {
     width: 100%;
     height: 100vh;
     padding: 0;
     margin: 0;
-    background-color: rgba(16, 93, 238, 0.13);
+    background: linear-gradient(45deg, rgb(3, 17, 43), rgb(21, 12, 56), rgb(39, 7, 69));
+    /* background-color: rgba(16, 93, 238, 0.13); */
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+    position: relative;
 }
 
 .imagotipo {
     position: absolute;
-    margin-top: 14vh;
+    margin-top: 16vh;
     font-family: 'Open Sans', sans-serif;
     color: rgb(146, 146, 146);
-    
 }
 
 .imagotipo div:nth-child(1) {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 18vw;
-    font-weight: 700; /* Bold */
-    
+    font-size: 12vw;
+    font-weight: 700;
+    letter-spacing: 10px;
+
 }
 
 .imagotipo div:nth-child(1) img {
-    margin-right: 4vw;
-    width: 30vw;
+    margin-right: 6vw;
+    width: 26vw;
 }
 
 .imagotipo div:nth-child(2) {
-    margin-top: 4vh;
-    font-size: 4vw;
-    font-weight: 700; /* Bold */
+    margin-top: 8vh;
+    font-size: 3.2vw;
+    font-weight: 700;
+    word-spacing: 12px;
+}
+
+/* Contenedor principal de la etiqueta */
+.scroll-down-indicator {
+    bottom: 30px;
+    left: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    transform: translateX(-50%);
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #fff;
+    z-index: 1000;
+    cursor: pointer;
+    animation: fadeIn 2s ease-out 1;
+}
+
+/* Animación de desaparición lenta */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Texto estilizado */
+.scroll-down-text {
+    font-size: 18px;
+    margin-bottom: 15px;
+    text-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Círculo animado */
+.scroll-down-circle {
+    width: 50px;
+    height: 50px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+    animation: pulse 1.5s infinite;
+    position: relative;
+}
+
+/* Flecha dentro del círculo */
+.scroll-down-arrow {
+    width: 20px;
+    height: 20px;
+    border-bottom: 2px solid #fff;
+    border-right: 2px solid #fff;
+    transform: rotate(45deg);
+    position: absolute;
+    bottom: 20px;
+    animation: bounce 1.5s infinite;
+}
+
+/* Efecto de pulsación en el círculo */
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 0.7;
+    }
+}
+
+/* Animación de la flecha para un rebote elegante */
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translateY(0) rotate(45deg);
+    }
+
+    40% {
+        transform: translateY(10px) rotate(45deg);
+    }
+
+    60% {
+        transform: translateY(5px) rotate(45deg);
+    }
+}
+
+.ocultar {
+    display: none;
 }
 
 .contenido {
     height: 200vh;
-    background-color: aqua;
+    /* background: linear-gradient(-45deg, Invertido para solaparse con el superior 
+    rgb(100, 7, 123) 0%, 
+    rgb(85, 7, 110) 7%, 
+    rgb(71, 7, 97) 15%, 
+    rgb(61, 7, 88) 25%, 
+    rgb(50, 7, 80) 35%, 
+    rgb(39, 7, 69) 50%, 
+    rgb(28, 7, 58) 65%, 
+    rgb(15, 12, 50) 80%, 
+    rgb(3, 17, 43) 100%);*/
+
+
+
+    /* background-color: rgba(16, 93, 238, 0.13); */
+}
+
+.whatsapp-icono {
+    width: 100px;
+    height: 100px;
+    position: fixed;
+    bottom: 8%;
+    right: 4%;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.whatsapp-icono:hover {
+    transform: scale(1.2);
+    transition: transform 0.3s ease;
 }
