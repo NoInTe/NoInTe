@@ -11,4 +11,4 @@ document.addEventListener("DOMContentLoaded", function () {
         });
         document.querySelector('.scroll-down-indicator').classList.add('ocultar');
     });
-}
+});
