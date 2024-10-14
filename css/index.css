@@ -33,18 +33,33 @@ main {
 }
 
 .imagotipo {
-    position: absolute;
     margin-top: 16vh;
     font-family: 'Open Sans', sans-serif;
     color: rgb(146, 146, 146);
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .imagotipo div:nth-child(1) {
     display: flex;
     justify-content: center;
     align-items: center;
+    
+
+}
+
+.imagotipo div:nth-child(1) span {
     font-size: 12vw;
-    font-weight: 700;
+    font-weight: 700px;
+    letter-spacing: 10px;
+
+}
+
+.imagotipo div:nth-child(1) span span {
+    font-size: 3.2vw;
+    font-weight: 700px;
     letter-spacing: 10px;
 
 }
@@ -57,7 +72,8 @@ main {
 .imagotipo div:nth-child(2) {
     margin-top: 8vh;
     font-size: 3.2vw;
-    font-weight: 700;
+    font-weight: 700px;
+    letter-spacing: 6px;
     word-spacing: 12px;
 }
 
