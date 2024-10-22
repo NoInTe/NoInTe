@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
 
     document.querySelector('.whatsapp-icono').addEventListener('click', function () {
-        window.location.href = 'https://wa.me/';
+        window.location.href = 'https://wa.me/+5491139243159';
     });
 
     document.querySelector('.scroll-down-indicator').addEventListener('click', function () {

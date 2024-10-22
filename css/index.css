@@ -65,7 +65,7 @@ main {
 }
 
 .imagotipo div:first-child img {
-    margin-right: calc(6vw * var(--mul-imagotipo));
+    margin-right: calc(14vw * var(--mul-imagotipo));
     width: calc(80vw * var(--mul-imagotipo));
 }
 
@@ -93,8 +93,7 @@ main {
 
 /* Contenedor principal de la etiqueta */
 .scroll-down-indicator {
-    top: 80vh;
-    /* left: 50%; */
+    bottom: 6vh;
     display: flex;
     flex-direction: column;
     align-items: center;
