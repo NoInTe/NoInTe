@@ -360,7 +360,7 @@ main {
   
   @media all and (max-width: 768px) {
     .linea_tiempo:before{
-        left: 0%;
+        left: 5%;
     }
     .linea_tiempo ul li{ 
         width: 100%;
@@ -368,6 +368,12 @@ main {
     .linea_tiempo ul li:nth-child(odd){
         float: right;
         text-align: left;
+        left:5%;
+    }
+    .linea_tiempo ul li:nth-child(even){
+        float: right;
+        text-align: left;
+        left:5%;
     }
     .linea_tiempo ul li:nth-child(odd)::before{
         left: -10px;
