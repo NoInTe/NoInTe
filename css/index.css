@@ -103,7 +103,7 @@ main {
   flex-basis: 100%;
   flex-grow: 0;
   flex-shrink: 1;
-  
+  align-items: stretch;
   position: relative;
   background-color: #00A4BF;
 }
@@ -111,9 +111,7 @@ main {
 .cabecera {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  flex-basis: 100%;
+  flex-basis: 20px;
   flex-grow: 0;
   flex-shrink: 1;
   background: linear-gradient(45deg, rgb(3, 17, 43), rgb(21, 12, 56), rgb(39, 7, 69));
