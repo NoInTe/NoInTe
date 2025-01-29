@@ -225,21 +225,23 @@ main {
 
   top: 100vh;
   width: 100%;
-  height: 140vh;
+  height: 100vh;
   position: absolute;
   z-index: 50;
-  clip-path: polygon(0 50%, 100% 40%, 100% 97%, 0 100%);
-  background: linear-gradient(0deg, rgba(255, 255, 255, 0.5), rgb(200, 200, 200), rgb(200, 200, 200), rgb(200, 200, 200));
+  background-color: #2eb909;
+  clip-path: polygon(0 27%, 100% 20%, 100% 95%, 0 100%);
+
+ /*  background: linear-gradient(0deg, rgba(255, 255, 255, 0.5), rgb(200, 200, 200), rgb(200, 200, 200), rgb(200, 200, 200));
   background: 
   linear-gradient(to bottom, 
-    rgba(255, 255, 255, 0) 39%,  /* Menos espacio para el gradiente superior */
-    rgba(255, 255, 255, 0.8) 40%, /* Comienza la transición al blanco */
-    rgba(255, 255, 255, 1) 50%,  /* Amplía el blanco puro */
-    rgba(255, 255, 255, 0.8) 75%, /* Comienza la salida del blanco */
-    rgba(255, 255, 255, 0) 85%   /* Menos espacio para el gradiente inferior */
+    rgba(255, 255, 255, 0) 39%, 
+    rgba(255, 255, 255, 0.8) 40%, 
+    rgba(255, 255, 255, 1) 50%, 
+    rgba(255, 255, 255, 0.8) 75%, 
+    rgba(255, 255, 255, 0) 85%  
   ),
-  linear-gradient(45deg, rgb(3, 17, 43), rgb(21, 12, 56), rgb(39, 7, 69)); /* Gradiente diagonal */
-
+  linear-gradient(45deg, rgb(3, 17, 43), rgb(21, 12, 56), rgb(39, 7, 69)); */
+  overflow: hidden;
   
 }
 
@@ -247,7 +249,7 @@ main {
 .servicios {
 
   top: 100vh;
-  height: 100vh;
+  height: auto;
   position: absolute;
   display: flex;
   justify-content: center;
@@ -255,6 +257,7 @@ main {
   z-index: 100;
   flex-direction: column;
   align-items: center;
+  overflow: hidden;
 
 }
 
@@ -663,6 +666,10 @@ main {
 /*Media Query*/
 
 @media (max-width: 1200px) {
+  .franja-blanca {
+    height: 214vh;
+    clip-path: polygon(0 27%, 100% 20%, 100% 95%, 0 100%);
+  }
   .card{
     width: 45%;
   }
@@ -672,6 +679,9 @@ main {
   }
   .card p {
     font-size: 2vw;
+  }
+  .contenido.viewport {
+    top: 300vh;
   }
 }
 
