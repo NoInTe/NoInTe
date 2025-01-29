@@ -102,9 +102,10 @@ header {
 /*CONTENIDO*/
 main {
   top: 0;
-  height: 450vh;
+  height: 480vh;
   display: flex;
   flex-direction: column;
+  align-items: center;
   position: relative;
   /* background-color: #c6d7f1; */
   /* background: linear-gradient(0deg, rgba(255, 255, 255, 0.603), rgb(255, 255, 255)); */
@@ -135,13 +136,15 @@ main {
 
 .guia-servicio h1 {
   padding: 1rem;
-  font-size: 2.5rem;
+  font-size: 4vw;
 
 }
 
 .guia-servicio p {
-  padding: 1rem;
-  font-size: 1.1rem;
+  justify-content: center;
+  text-align: center;
+  padding: 4rem;
+  font-size: 2.3vw;
 }
 
 .guia-logo {
@@ -217,6 +220,30 @@ main {
 }
 
 /* --------------------------------------------------------------------------------------------*/
+
+.franja-blanca {
+
+  top: 100vh;
+  width: 100%;
+  height: 140vh;
+  position: absolute;
+  z-index: 50;
+  clip-path: polygon(0 50%, 100% 40%, 100% 97%, 0 100%);
+  background: linear-gradient(0deg, rgba(255, 255, 255, 0.5), rgb(200, 200, 200), rgb(200, 200, 200), rgb(200, 200, 200));
+  background: 
+  linear-gradient(to bottom, 
+    rgba(255, 255, 255, 0) 39%,  /* Menos espacio para el gradiente superior */
+    rgba(255, 255, 255, 0.8) 40%, /* Comienza la transición al blanco */
+    rgba(255, 255, 255, 1) 50%,  /* Amplía el blanco puro */
+    rgba(255, 255, 255, 0.8) 75%, /* Comienza la salida del blanco */
+    rgba(255, 255, 255, 0) 85%   /* Menos espacio para el gradiente inferior */
+  ),
+  linear-gradient(45deg, rgb(3, 17, 43), rgb(21, 12, 56), rgb(39, 7, 69)); /* Gradiente diagonal */
+
+  
+}
+
+/* --------------------------------------------------------------------------------------------*/
 .servicios {
 
   top: 100vh;
@@ -253,7 +280,7 @@ main {
 }
 
 .card-container {
-  gap: 1.5rem;
+  gap: 3rem;
   padding: 2rem;
   flex-wrap: wrap;
   display: flex;
@@ -264,25 +291,26 @@ main {
 .card {
   background-color: #ffffff;
   border-radius: 8px;
-  border: 4px solid #ffffff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-
+  border: 2px solid #2860c2;
+  box-shadow: 
+    0 0 2px rgba(102, 88, 234, 1),    /* Sombra más intensa y brillante */
+    0 0 10px rgba(102, 88, 234, 0.8),  /* Sombra difusa más amplia */
+    0 0 30px rgba(102, 88, 234, 0.5);  /* Resplandor adicional */
   text-align: center;
-  width: 25%;
-  height: 600px;
+  width: 30%;
   transition: transform 0.3s ease;
   z-index: 100;
 
 }
 
 .card h2 {
-  font-size: 1.5rem;
+  font-size: 1.7vw;
   color: #ffffff;
   text-align: center;
 }
 
 .card p {
-  font-size: 1rem;
+  font-size: 1.1vw;
   color: #666666;
   text-align: left;
 }
@@ -450,7 +478,7 @@ main {
   top: 200vh;
   height: auto;
   position: absolute;
-
+  z-index: 100;
   /*background-image: url('../img/fondo.png');  Imagen centrada */
   /*background-size: cover; /* Ajustar la imagen para cubrir todo el espacio */
   /*background-attachment: fixed; /* Mantiene la imagen fija al hacer scroll */
@@ -627,4 +655,29 @@ main {
 
 .whatsapp-icono:hover {
   transform: scale(1.2);
+}
+
+
+
+
+/*Media Query*/
+
+@media (max-width: 1200px) {
+  .card{
+    width: 45%;
+  }
+
+  .card h2 {
+    font-size: 2.5vw;
+  }
+  .card p {
+    font-size: 2vw;
+  }
+}
+
+@media (max-width: 800px) {
+  .card{
+    width: 60%;
+    min-height: 300px;
+  }
 }
