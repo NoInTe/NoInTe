@@ -1,8 +1,14 @@
 document.addEventListener("DOMContentLoaded", function () {
 
   document.querySelector('.whatsapp-icono').addEventListener('click', function () {
-      window.location.href = 'https://wa.me/+5491139243159';
+    window.location.href = 'https://wa.me/+5491139243159';
   });
+
+  // Ocultar preloader después de 500ms
+  setTimeout(() => {
+    document.querySelector('.preloader').classList.add("hidden");
+    document.querySelector('main').style.display = "relative"; // Mostrar contenido
+  }, 1000);
 });
 
 
@@ -145,14 +151,14 @@ window.addEventListener('click', (e) => {
 /* contenido LINEA DE TIEMPO  */
 const zoomInObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
-      if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'scale(1)';
-          entry.target.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-      } else {
-          entry.target.style.opacity = '0';
-          entry.target.style.transform = 'scale(0.8)';
-      }
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'scale(1)';
+      entry.target.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+    } else {
+      entry.target.style.opacity = '0';
+      entry.target.style.transform = 'scale(0.8)';
+    }
   });
 }, {
   threshold: 0.4 // Umbral al 80%

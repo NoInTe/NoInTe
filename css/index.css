@@ -1,4 +1,7 @@
-/*GENERALES*/
+/*-------------------------------------------------------------------------------------------*/
+/*                                    GENERALES                                              */
+/*-------------------------------------------------------------------------------------------*/
+
 * {
   margin: 0;
   padding: 0;
@@ -16,7 +19,120 @@ body {
   background: linear-gradient(45deg, rgb(3, 17, 43), rgb(21, 12, 56), rgb(39, 7, 69));
 }
 
-/*NAVEGADOR*/
+/*-------------------------------------------------------------------------------------------*/
+/*                                  PRELOADER                                                */
+/*-------------------------------------------------------------------------------------------*/
+
+/* Estilos del Preloader */
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #1a1a1a;
+  /* Fondo oscuro */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20%;
+  z-index: 9999;
+  transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+  color: #ffffff;
+}
+
+/* Ocultar el preloader */
+.preloader.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+/* Animación de carga */
+.loader {
+  border: 5px solid rgba(255, 255, 255, 0.3);
+  border-top: 5px solid #ffffff;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.guia-logo {
+
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-basis: content;
+  flex-grow: 0;
+  flex-shrink: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: bold;
+  gap: 2vh;
+
+}
+
+.guia-logo-A {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 80%;
+  flex-grow: 0;
+  flex-shrink: 0;
+  gap: 3%;
+
+}
+
+.img-logo {
+  width: 1px;
+  flex-basis: 30%;
+  /* Cada imagen ocupa el 20% del contenedor */
+  flex-grow: 0;
+  flex-shrink: 1;
+  object-fit: contain;
+}
+
+.nombre-nit {
+  font-size: 200%;
+  letter-spacing: 2vw;
+  flex-basis: content;
+  flex-grow: 0;
+  flex-shrink: 1;
+}
+
+.nombre-works {
+  font-size: 50%;
+
+
+}
+
+.guia-logo-C {
+  flex-basis: content;
+  flex-grow: 0;
+  flex-shrink: 1;
+  font-size: 100%;
+  letter-spacing: 0.6vw;
+  word-spacing: 0.8vw;
+
+
+}
+
+/*-------------------------------------------------------------------------------------------*/
+/*                                      NAVEGADOR                                            */
+/*-------------------------------------------------------------------------------------------*/
 
 header {
   top: 0;
@@ -101,126 +217,49 @@ header {
 
 /* Movimiento del logo */
 
-/*CONTENIDO*/
+/*-------------------------------------------------------------------------------------------*/
+/*                                    CONTENIDO                                              */
+/*-------------------------------------------------------------------------------------------*/
+
 main {
   top: 0;
   height: 480vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: relative;
+  position: none;
   /* background-color: #c6d7f1; */
   /* background: linear-gradient(0deg, rgba(255, 255, 255, 0.603), rgb(255, 255, 255)); */
   background: linear-gradient(45deg, rgb(3, 17, 43), rgb(21, 12, 56), rgb(39, 7, 69));
   z-index: 2;
 }
 
-/* --------------------------------------------------------------------------------------------*/
 .cabecera {
   top: 0;
+  width: 100vw;
   height: 100vh;
+  padding: 5%;
   position: absolute;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10%;
+  color: #ffffff;
   z-index: 100;
 }
 
-.guia-servicio {
+.cabecera-titulo {
   left: 0;
-  display: flex;
-  position: relative;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  color: #ffffff;
-
-}
-
-.guia-servicio h1 {
-  padding: 1rem;
   font-size: 4vw;
-
-}
-
-.guia-servicio p {
   text-align: center;
-  padding: 4rem;
+}
+
+.cabecera-subtitulo {
+  left: 0;
   font-size: 2.3vw;
+  text-align: center;
 }
-
-.guia-logo {
-
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  flex-basis: content;
-  flex-grow: 0;
-  flex-shrink: 0;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: bold;
-  gap: 2vh;
-
-}
-
-/*//////////////////////////////////////////////////////*/
-.guia-logo-A {
-  width: 90%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  flex-basis: 80%;
-  flex-grow: 0;
-  flex-shrink: 0;
-  gap: 3%;
-
-}
-
-.img-logo {
-  width: 1px;
-  flex-basis: 30%;
-  /* Cada imagen ocupa el 20% del contenedor */
-  flex-grow: 0;
-  flex-shrink: 1;
-  object-fit: contain;
-}
-
-.nombre-nit {
-  font-size: 200%;
-  letter-spacing: 2vw;
-  flex-basis: content;
-  flex-grow: 0;
-  flex-shrink: 1;
-}
-
-.nombre-works {
-  font-size: 50%;
-
-
-}
-
-/*//////////////////////////////////////////////////////*/
-
-/* .guia-logo div:first-child span span {
-  font-size: 1.1rem;
-  font-weight: 700px;
-  letter-spacing: 0;
-
-} */
-
-.guia-logo-C {
-  flex-basis: content;
-  flex-grow: 0;
-  flex-shrink: 1;
-  font-size: 100%;
-  letter-spacing: 0.6vw;
-  word-spacing: 0.8vw;
-
-
-}
-
-/* --------------------------------------------------------------------------------------------*/
 
 .franja-blanca {
 
@@ -229,7 +268,7 @@ main {
   height: 100%;
   position: absolute;
   z-index: 50;
-  
+
   clip-path: polygon(0 27%, 100% 20%, 100% 95%, 0 100%);
 
   background: linear-gradient(-4deg, rgba(8, 185, 255, 0.26), rgb(200, 200, 200), rgb(200, 200, 200));
@@ -245,7 +284,10 @@ main {
   overflow: hidden;
 }
 
-/* --------------------------------------------------------------------------------------------*/
+/*-------------------------------------------------------------------------------------------*/
+/*                                    SERVICIOS                                              */
+/*-------------------------------------------------------------------------------------------*/
+
 .servicios {
 
   top: 100vh;
@@ -293,7 +335,7 @@ main {
 }
 
 .card {
-  
+
   flex-grow: 0;
   flex-shrink: 1;
   flex-basis: 60%;
@@ -302,10 +344,13 @@ main {
   background-color: #ffffff;
   border-radius: 8px;
   border: 2px solid #2860c2;
-  box-shadow: 
-    0 0 2px rgba(102, 88, 234, 1),    /* Sombra más intensa y brillante */
-    0 0 10px rgba(102, 88, 234, 0.8),  /* Sombra difusa más amplia */
-    0 0 30px rgba(102, 88, 234, 0.5);  /* Resplandor adicional */
+  box-shadow:
+    0 0 2px rgba(102, 88, 234, 1),
+    /* Sombra más intensa y brillante */
+    0 0 10px rgba(102, 88, 234, 0.8),
+    /* Sombra difusa más amplia */
+    0 0 30px rgba(102, 88, 234, 0.5);
+  /* Resplandor adicional */
   transition: transform 0.3s ease;
   z-index: 100;
 
@@ -479,8 +524,9 @@ main {
   align-items: center;
 }
 
-/* --------------------------------------------------------------------------------------------*/
-/*NOSOTROS*/
+/*-------------------------------------------------------------------------------------------*/
+/*                                  NOSOTROS                                                 */
+/*-------------------------------------------------------------------------------------------*/
 
 .contenido.viewport {
   top: 200vh;
@@ -596,10 +642,9 @@ main {
   }
 }
 
-/*NOSOTROS*/
-
-
-/*FOOTER*/
+/*-------------------------------------------------------------------------------------------*/
+/*                                    FOOTER                                                 */
+/*-------------------------------------------------------------------------------------------*/
 
 .footer-content {
   width: 100%;
@@ -666,41 +711,49 @@ main {
   transform: scale(1.2);
 }
 
-
-
-
-/*Media Query*/
+/*-------------------------------------------------------------------------------------------*/
+/*                                   MEDIA QUERY                                             */
+/*-------------------------------------------------------------------------------------------*/
 
 @media (max-width: 1200px) {
-  .franja-blanca {
+
+  /*   .franja-blanca {
     height: 214vh;
     clip-path: polygon(100% 7%, 100% 31%, 100% 82%, 0 89%, 0 55%, 100% 48%, 100% 31%, 0 38%, 0 9%);
-  }
-  .card{
+  } */
+  .card {
     width: 45%;
   }
 
   .card h2 {
     font-size: 2.5vw;
   }
+
   .card p {
     font-size: 2vw;
   }
+
   .contenido.viewport {
     top: 300vh;
   }
 }
 
 @media (max-width: 800px) {
+  .franja-blanca {
+    display: none;
+  }
+
   .card-container {
-    
+
     flex-direction: column;
   }
-  .card{
+
+  .card {
     width: 100%;
     min-height: 300px;
     margin-bottom: 10%;
   }
+
   .contenido.viewport {
     top: 350vh;
   }
