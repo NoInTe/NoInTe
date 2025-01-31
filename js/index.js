@@ -7,18 +7,20 @@ document.addEventListener("DOMContentLoaded", function () {
   // Ocultar preloader después de 500ms
   setTimeout(() => {
     document.querySelector('.preloader').classList.add("hidden");
-    document.querySelector('main').style.display = "relative"; // Mostrar contenido
+    document.querySelector('main').style.display = "flex"; // Mostrar contenido
   }, 1000);
 });
 
 
 //NAV
 const hamburger = document.querySelector(".hamburger");
+const cabecera = document.querySelector(".cabecera");
 const navMenu = document.querySelector(".nav-links");
 
 // Toggle para abrir y cerrar el menú con el icono de la hamburguesa
 hamburger.addEventListener("click", () => {
   hamburger.classList.toggle("active");
+  cabecera.classList.toggle("desactivado");
   navMenu.classList.toggle("active");
 
   let menuOpen = navMenu.classList.contains("active");
@@ -30,6 +32,7 @@ hamburger.addEventListener("click", () => {
 document.querySelectorAll(".nav-links a").forEach(n => 
   n.addEventListener("click", () => {
     hamburger.classList.remove("active");
+    cabecera.classList.remove("desactivado");
     navMenu.classList.remove("active");
     hamburger.setAttribute("aria-expanded", "false");
   })
@@ -39,6 +42,7 @@ document.querySelectorAll(".nav-links a").forEach(n =>
 document.addEventListener("click", (e) => {
   if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
     hamburger.classList.remove("active");
+    cabecera.classList.remove("desactivado");
     navMenu.classList.remove("active");
     hamburger.setAttribute("aria-expanded", "false");
   }
@@ -47,6 +51,7 @@ document.addEventListener("click", (e) => {
 // Cerrar el menú al hacer scroll
 window.addEventListener("scroll", () => {
   hamburger.classList.remove("active");
+  cabecera.classList.remove("desactivado");
   navMenu.classList.remove("active");
   hamburger.setAttribute("aria-expanded", "false");
 });
