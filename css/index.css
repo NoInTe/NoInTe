@@ -143,6 +143,7 @@ header {
 }
 
 .navbar {
+  height: 70px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -156,14 +157,21 @@ header {
   list-style: none;
   display: flex;
   gap: 1.5rem;
+  position: fixed;
+  left: -110%;
+  top: 70px;
+  flex-direction: column;
+  width: 100%;
+  text-align: center;
+  transition: 750ms;
 }
 
 .nav-links a {
   text-decoration: none;
-  color: #000000;
-  font-size: 1.3vw;
+  color: #2b1364;
+  font-size: 1.4vw;
   font-weight: bold;
-  transition: color 0.3s ease;
+  transition: color 0.4s ease;
 }
 
 .nav-links a:hover {
@@ -197,10 +205,16 @@ header {
   }
 }
 
-.nombre-empresa {
-  font-size: 1.5rem;
+.nombre-empresa span{
+  font-size: 1.8rem;
   font-weight: bold;
   color: #2b1364;
+}
+
+.nombre-empresa p {
+  font-size: 1vw;
+  color: #2b1364;
+  font-weight: bold;
 }
 
 .highlight {
@@ -214,6 +228,35 @@ header {
   /* Resplandor adicional */
 }
 
+.hamburger {
+  cursor: pointer;
+  margin:10px;
+}
+
+.bar {
+  display: block;
+  background-color: #fff;
+  width: 24px;
+  height: 2px;
+  margin: 6px ;
+  transition: all 300ms ease-in-out;
+}
+
+.hamburger.active .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.active .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+.nav-links.active {
+  left: 0;
+}
 
 /* Movimiento del logo */
 
@@ -724,11 +767,9 @@ main {
   .card {
     width: 45%;
   }
-
   .card h2 {
     font-size: 2.5vw;
   }
-
   .card p {
     font-size: 2vw;
   }
@@ -739,12 +780,22 @@ main {
 }
 
 @media (max-width: 800px) {
+  .nav-links{
+      background-color: rgba(255, 255, 255, 0.896);
+  }
+  .nav-links a {
+      font-size: 4vw;
+  }
+  .nav-links li {
+      margin: 1em 0;
+    }
+
+
   .franja-blanca {
     display: none;
   }
 
   .card-container {
-
     flex-direction: column;
   }
 
@@ -759,3 +810,20 @@ main {
   }
 
 }
+
+@media (min-width: 801px) {
+  .nav-links {
+    position: static;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: auto;
+    margin-right: 20px;
+  }
+
+  .hamburger {
+    display: none;
+  }
+}
+

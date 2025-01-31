@@ -12,6 +12,48 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+//NAV
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-links");
+
+// Toggle para abrir y cerrar el menú con el icono de la hamburguesa
+hamburger.addEventListener("click", () => {
+  hamburger.classList.toggle("active");
+  navMenu.classList.toggle("active");
+
+  let menuOpen = navMenu.classList.contains("active");
+  let newMenuOpenStatus = menuOpen;
+  hamburger.setAttribute("aria-expanded", newMenuOpenStatus);
+});
+
+// Cerrar el menú cuando se haga clic en un enlace dentro del menú
+document.querySelectorAll(".nav-links a").forEach(n => 
+  n.addEventListener("click", () => {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+    hamburger.setAttribute("aria-expanded", "false");
+  })
+);
+
+// Cerrar el menú si se hace clic fuera de él
+document.addEventListener("click", (e) => {
+  if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+    hamburger.setAttribute("aria-expanded", "false");
+  }
+});
+
+// Cerrar el menú al hacer scroll
+window.addEventListener("scroll", () => {
+  hamburger.classList.remove("active");
+  navMenu.classList.remove("active");
+  hamburger.setAttribute("aria-expanded", "false");
+});
+
+//TERMINA NAV
+
+
 // Obtiene todos los botones de "Leer más"
 const leerMasBtns = document.querySelectorAll('.leer-mas-btn');
 
