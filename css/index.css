@@ -6,7 +6,15 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* overflow: hidden; */
+  /* overflow: hidden;  */
+}
+
+:root {
+  --main-height:480vh;
+  --cabecera-height:100vh;
+  --nosotros-top: 300vh;
+  --footer-top: -50px;
+  
 }
 
 body {
@@ -16,8 +24,9 @@ body {
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  background: linear-gradient(45deg, rgb(3, 17, 43), rgb(21, 12, 56), rgb(39, 7, 69));
-}
+  /* background: linear-gradient(45deg, rgb(3, 17, 43), rgb(21, 12, 56), rgb(39, 7, 69)); */
+  background-color: #5a5a5a;
+} 
 
 /*-------------------------------------------------------------------------------------------*/
 /*                                  PRELOADER                                                */
@@ -266,10 +275,10 @@ header {
 
 main {
   top: 0;
-  height: 480vh;
+  width: 100%;
+  height: var(--main-height);
   display: flex;
   flex-direction: column;
-  align-items: center;
   position: relative;
   /* background-color: #c6d7f1; */
   /* background: linear-gradient(0deg, rgba(255, 255, 255, 0.603), rgb(255, 255, 255)); */
@@ -279,8 +288,8 @@ main {
 
 .cabecera {
   top: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: var(--cabecera-height);
   padding: 5%;
   position: absolute;
   display: flex;
@@ -308,10 +317,14 @@ main {
   text-align: center;
 }
 
+/*-------------------------------------------------------------------------------------------*/
+/*                                    SERVICIOS                                              */
+/*-------------------------------------------------------------------------------------------*/
+
 .franja-blanca {
 
   top: 0;
-  width: 100vw;
+  width: 100%;
   height: 100%;
   position: absolute;
   z-index: 50;
@@ -328,16 +341,11 @@ main {
     rgba(255, 255, 255, 0) 85%  
   ),
   linear-gradient(45deg, rgb(3, 17, 43), rgb(21, 12, 56), rgb(39, 7, 69)); */
-  overflow: hidden;
 }
 
-/*-------------------------------------------------------------------------------------------*/
-/*                                    SERVICIOS                                              */
-/*-------------------------------------------------------------------------------------------*/
-
 .servicios {
-
   top: 100vh;
+  width: 100%;
   height: auto;
   position: absolute;
   display: flex;
@@ -347,7 +355,6 @@ main {
   flex-direction: column;
   align-items: center;
   overflow: hidden;
-
 }
 
 .servicios h1 {
@@ -420,7 +427,7 @@ main {
 }
 
 .leer-mas-btn {
-  width: 130px;
+  width: 40%;
   height: 40px;
   color: #fff;
   border-radius: 5px;
@@ -518,9 +525,6 @@ main {
   text-align: center;
 }
 
-
-
-
 .popup {
   display: none;
   position: fixed;
@@ -580,23 +584,19 @@ main {
 /*                                  NOSOTROS                                                 */
 /*-------------------------------------------------------------------------------------------*/
 
-.contenido.viewport {
-  top: 200vh;
+.nosotros {
+  top: var(--nosotros-top);
+  width: 100%;
   height: auto;
   position: absolute;
-  z-index: 100;
+  padding-bottom: 200px;
+  z-index: 90;
   /*background-image: url('../img/fondo.png');  Imagen centrada */
   /*background-size: cover; /* Ajustar la imagen para cubrir todo el espacio */
   /*background-attachment: fixed; /* Mantiene la imagen fija al hacer scroll */
-
-  width: 100%;
-  /* Ocupa todo el ancho */
-
-
-
 }
 
-.contenido.viewport h1 {
+.nosotros h1 {
   font-size: 3vw;
   font-weight: 100;
   letter-spacing: 15px;
@@ -605,7 +605,7 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 150px;
+  margin-top: 80px;
   margin-bottom: 20px;
 }
 
@@ -616,7 +616,6 @@ main {
 
 .linea_tiempo ul li:nth-child(odd) {
   float: left;
-
   clear: both;
   display: flex;
   flex-direction: column;
@@ -634,7 +633,7 @@ main {
 }
 
 
-.contenido_lt h2 {
+.nosotros_lt h2 {
   font-family: 'Playfair Display', serif;
   font-size: 2vw;
   font-weight: 700;
@@ -643,7 +642,7 @@ main {
   color: #ffffff;
 }
 
-.contenido_lt p {
+.nosotros_lt p {
   font-family: 'Open Sans', sans-serif;
   font-size: 1.1vw;
   font-weight: 400;
@@ -654,55 +653,21 @@ main {
   text-align: justify;
 }
 
-.img_contenido {
+.img_nosotros {
   width: 30vw;
 }
 
-@media all and (max-width: 768px) {
-  .linea_tiempo:before {
-    left: 5%;
-  }
-
-  .linea_tiempo ul li {
-    width: 100%;
-  }
-
-  .linea_tiempo ul li:nth-child(odd) {
-    float: right;
-    text-align: left;
-    left: 5%;
-  }
-
-  .linea_tiempo ul li:nth-child(even) {
-    float: right;
-    text-align: left;
-    left: 5%;
-  }
-
-  .linea_tiempo ul li:nth-child(odd)::before {
-    left: -10px;
-  }
-
-  .linea_tiempo ul li:nth-child(odd)::after {
-    left: 25px;
-    border-width: 10px 15px 10px 0px;
-    border-color: transparent #6658ea transparent transparent;
-  }
-
-  .img_contenido {
-    width: 70vw;
-  }
-}
 
 /*-------------------------------------------------------------------------------------------*/
 /*                                    FOOTER                                                 */
 /*-------------------------------------------------------------------------------------------*/
 
 .footer-content {
-  top: -50px;
-  width: 100vw;
-  height: 50px;
-  position: relative;
+  top: calc(var(--footer-top) - 90px);
+  width: 100%;
+  height: 90px;
+  padding: 20px;
+  position: absolute;
   text-align: center;
   font-family: Arial, sans-serif;
   /* background: linear-gradient(45deg, rgb(3, 17, 43), rgb(21, 12, 56), rgb(39, 7, 69)); */
@@ -749,7 +714,7 @@ main {
 
 
 .whatsapp-icono {
-  width: 5vw;
+  width: 6vw;
   position: fixed;
   bottom: 6vh;
   right: 3vw;
@@ -784,9 +749,6 @@ main {
     font-size: 2vw;
   }
 
-  .contenido.viewport {
-    top: 300vh;
-  }
 }
 
 @media (max-width: 800px) {
@@ -821,20 +783,53 @@ main {
     margin-bottom: 10%;
   }
 
-  .contenido.viewport {
-    top: 350vh;
-  }
-
-  .contenido.viewport h1 {
+  .nosotros h1 {
     font-size: 5vw;
   }
 
-  .contenido_lt h2 {
+  .nosotros_lt h2 {
     font-size: 4vw;
   }
 
-  .contenido_lt p {
+  .nosotros_lt p {
     font-size: 2.5vw;
+  }
+
+  .linea_tiempo:before {
+    left: 5%;
+  }
+
+  .linea_tiempo ul li {
+    width: 100%;
+  }
+
+  .linea_tiempo ul li:nth-child(odd) {
+    float: right;
+    text-align: left;
+    left: 5%;
+  }
+
+  .linea_tiempo ul li:nth-child(even) {
+    float: right;
+    text-align: left;
+    left: 5%;
+  }
+
+  .linea_tiempo ul li:nth-child(odd)::before {
+    left: -10px;
+  }
+
+  .linea_tiempo ul li:nth-child(odd)::after {
+    left: 25px;
+    border-width: 10px 15px 10px 0px;
+    border-color: transparent #6658ea transparent transparent;
+  }
+
+  .img_nosotros {
+    width: 70vw;
+  }
+  .whatsapp-icono {
+    width: 10vw;
   }
 }
 

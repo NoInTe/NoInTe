@@ -9,7 +9,32 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelector('.preloader').classList.add("hidden");
     document.querySelector('main').style.display = "flex"; // Mostrar contenido
   }, 1000);
+
+  ajusteContenedorVertical();
+
 });
+
+window.addEventListener("resize", function () {
+
+  ajusteContenedorVertical();
+
+});
+
+
+
+
+function ajusteContenedorVertical(){
+  const servicios = document.querySelector(".servicios");
+  const nosotros = document.querySelector(".nosotros");
+  let bordeInferiorServicios = servicios.offsetTop + servicios.offsetHeight;
+  let bordeInferiorNosotros = bordeInferiorServicios + nosotros.offsetHeight;
+
+  document.documentElement.style.setProperty('--nosotros-top', bordeInferiorServicios + "px");
+  document.documentElement.style.setProperty('--main-height', bordeInferiorNosotros + "px");
+  document.documentElement.style.setProperty('--footer-top', bordeInferiorNosotros + "px");
+};
+
+
 
 
 //NAV
@@ -19,6 +44,7 @@ const navMenu = document.querySelector(".nav-links");
 
 // Toggle para abrir y cerrar el menú con el icono de la hamburguesa
 hamburger.addEventListener("click", () => {
+  popup.style.display = 'none';
   hamburger.classList.toggle("active");
   cabecera.classList.toggle("desactivado");
   navMenu.classList.toggle("active");
@@ -29,7 +55,7 @@ hamburger.addEventListener("click", () => {
 });
 
 // Cerrar el menú cuando se haga clic en un enlace dentro del menú
-document.querySelectorAll(".nav-links a").forEach(n => 
+document.querySelectorAll(".nav-links a").forEach(n =>
   n.addEventListener("click", () => {
     hamburger.classList.remove("active");
     cabecera.classList.remove("desactivado");
@@ -211,9 +237,10 @@ const zoomInObserver = new IntersectionObserver((entries) => {
   threshold: 0.4 // Umbral al 80%
 });
 
-const zoomInContents = document.querySelectorAll('.contenido_lt');
+const zoomInContents = document.querySelectorAll('.nosotros_lt');
 zoomInContents.forEach(content => {
   content.style.opacity = '0';
   content.style.transform = 'scale(0.8)';
   zoomInObserver.observe(content);
 });
+
