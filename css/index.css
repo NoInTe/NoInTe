@@ -539,9 +539,14 @@ main {
   max-width: 500px;
   max-height: 85%;
   position: relative;
-  border: 3px solid rgba(0, 172, 238, 1);
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-  /* Sombra para profundidad */
+  border: 3px solid #2860c2;
+  box-shadow:
+    0 0 2px rgba(102, 88, 234, 1),
+    /* Sombra más intensa y brillante */
+    0 0 10px rgba(102, 88, 234, 0.8),
+    /* Sombra difusa más amplia */
+    0 0 30px rgba(102, 88, 234, 0.5);
+  /* Resplandor adicional */
   overflow-y: auto;
   /*scroll vertical */
   scrollbar-width: none;
