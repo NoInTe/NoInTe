@@ -82,6 +82,31 @@ window.addEventListener("scroll", () => {
   hamburger.setAttribute("aria-expanded", "false");
 });
 
+// Desplazamiento con efecto al hacer click en los enlaces
+document.querySelectorAll('.nav-links a').forEach(enlace => {
+  enlace.addEventListener('click', function(e) {
+      e.preventDefault(); // Evita el salto instantáneo
+      const seccion = document.querySelector(this.getAttribute('href'));
+
+      if (seccion) {
+          // Agrega una clase antes del desplazamiento
+          seccion.classList.add("animando");
+
+          // Desplazamiento suave
+          window.scrollTo({
+              top: seccion.offsetTop,
+              behavior: "smooth"
+          });
+
+          // Remueve la animación después de 800ms (ajusta según la duración del scroll)
+          setTimeout(() => {
+              seccion.classList.remove("animando");
+          }, 600);
+      }
+  });
+});
+
+
 //TERMINA NAV
 
 
