@@ -89,19 +89,11 @@ document.querySelectorAll('.nav-links a').forEach(enlace => {
       const seccion = document.querySelector(this.getAttribute('href'));
 
       if (seccion) {
-          // Agrega una clase antes del desplazamiento
-          seccion.classList.add("animando");
-
           // Desplazamiento suave
           window.scrollTo({
               top: seccion.offsetTop,
               behavior: "smooth"
           });
-
-          // Remueve la animación después de 800ms (ajusta según la duración del scroll)
-          setTimeout(() => {
-              seccion.classList.remove("animando");
-          }, 600);
       }
   });
 });
@@ -253,10 +245,7 @@ const zoomInObserver = new IntersectionObserver((entries) => {
       entry.target.style.opacity = '1';
       entry.target.style.transform = 'scale(1)';
       entry.target.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-    } else {
-      entry.target.style.opacity = '0';
-      entry.target.style.transform = 'scale(0.8)';
-    }
+    } 
   });
 }, {
   threshold: 0.4 // Umbral al 80%
