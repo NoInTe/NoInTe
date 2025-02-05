@@ -7,7 +7,7 @@
 }
 
 :root {
-  --main-height: auto;
+  --main-height: 500vh;
   --cabecera-height: 100vh;
   --nosotros-top: 300vh;
   --footer-top: -50px;
