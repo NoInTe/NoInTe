@@ -1,10 +1,12 @@
+// ------------------AJUSTE DINAMICO DE LOS CONTENEDORES ABSOLUTOS-----------------------//
 const servicios = document.querySelector(".servicios");
 const nosotros = document.querySelector(".nosotros");
 const footer = document.querySelector(".footer");
-// ------------------------------HEADER--------------------------------------------//
+// ------------------------------HEADER------------------------------------------------//
 //NAV
 const hamburger = document.querySelector(".hamburger");
-const cabecera = document.querySelector(".cabecera");
+const cabeceraTitulo = document.querySelector(".cabecera-titulo");
+const cabeceraSubtitulo = document.querySelector(".cabecera-subtitulo");
 const navMenu = document.querySelector(".nav-links");
 
 // ------------------------------SERVICIOS--------------------------------------------//
@@ -118,38 +120,26 @@ const contenidoExtra = {
               </p>
   `,
 };
-// ------------------------------NOSOTROS--------------------------------------------//
+// ---------------------------------NOSOTROS----------------------------------------------//
 /* contenido LINEA DE TIEMPO  */
 const zoomInContents = document.querySelectorAll('.nosotros_lt');
 
-
-
-
-// ----------------------------------EVENTOS DEL DOM-------------------------------------//
-
+// ------------------------------------EVENTOS-------------------------------------------//
 document.addEventListener("DOMContentLoaded", function () {
-
   // Ocultar preloader después de 1000ms
   setTimeout(() => {
     document.querySelector('.preloader').classList.add("hidden");
     document.querySelector('main').style.display = "flex"; // Mostrar contenido
   }, 1000);
-
 });
 
 window.addEventListener("load", function () {
-
   ajusteContenedorVertical();
-
 });
 
 window.addEventListener("resize", function () {
-
   ajusteContenedorVertical();
-
 });
-
-
 
 // ----------------------AJUSTE DINAMICO DE LOS CONTENEDORES ABSOLUTOS---------------------------//
 function ajusteContenedorVertical() {
@@ -176,7 +166,8 @@ document.querySelector('.whatsapp-icono').addEventListener('click', function () 
 hamburger.addEventListener("click", () => {
   popup.style.display = 'none';
   hamburger.classList.toggle("active");
-  cabecera.classList.toggle("desactivado");
+  cabeceraTitulo.classList.toggle("desactivado");
+  cabeceraSubtitulo.classList.toggle("desactivado");
   navMenu.classList.toggle("active");
   let menuOpen = navMenu.classList.contains("active");
   let newMenuOpenStatus = menuOpen;
@@ -187,7 +178,8 @@ hamburger.addEventListener("click", () => {
 document.querySelectorAll(".nav-links a").forEach(n =>
   n.addEventListener("click", () => {
     hamburger.classList.remove("active");
-    cabecera.classList.remove("desactivado");
+    cabeceraTitulo.classList.remove("desactivado");
+    cabeceraSubtitulo.classList.remove("desactivado");
     navMenu.classList.remove("active");
     hamburger.setAttribute("aria-expanded", "false");
   })
@@ -197,7 +189,8 @@ document.querySelectorAll(".nav-links a").forEach(n =>
 document.addEventListener("click", (e) => {
   if (!hamburger.contains(e.target) && !navMenu.contains(e.target)) {
     hamburger.classList.remove("active");
-    cabecera.classList.remove("desactivado");
+    cabeceraTitulo.classList.remove("desactivado");
+    cabeceraSubtitulo.classList.remove("desactivado");
     navMenu.classList.remove("active");
     hamburger.setAttribute("aria-expanded", "false");
   }
@@ -206,7 +199,8 @@ document.addEventListener("click", (e) => {
 // Cerrar el menú al hacer scroll
 window.addEventListener("scroll", () => {
   hamburger.classList.remove("active");
-  cabecera.classList.remove("desactivado");
+  cabeceraTitulo.classList.remove("desactivado");
+  cabeceraSubtitulo.classList.remove("desactivado");
   navMenu.classList.remove("active");
   hamburger.setAttribute("aria-expanded", "false");
 });
