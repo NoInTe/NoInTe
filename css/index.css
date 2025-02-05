@@ -10,6 +10,7 @@
   --main-height: 500vh;
   --cabecera-height: 100vh;
   --nosotros-top: 300vh;
+  --nosotros-paddingBotton: 360px;
   --footer-top: -50px;
 
 }
@@ -585,7 +586,7 @@ main {
   height: auto;
   position: absolute;
   padding-top: 60px;
-  padding-bottom: 360px;
+  padding-bottom: var(--nosotros-paddingBotton);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -658,9 +659,10 @@ main {
 /*-------------------------------------------------------------------------------------------*/
 
 .footer {
-  top: calc(var(--footer-top) - 250px);
+  top: var(--footer-top);
   width: auto;
   position: absolute;
+  padding-bottom: 10px;
   display: flex;
   flex-direction: column;
   align-self: center;

@@ -1,5 +1,6 @@
 const servicios = document.querySelector(".servicios");
 const nosotros = document.querySelector(".nosotros");
+const footer = document.querySelector(".footer");
 // ------------------------------HEADER--------------------------------------------//
 //NAV
 const hamburger = document.querySelector(".hamburger");
@@ -134,6 +135,10 @@ document.addEventListener("DOMContentLoaded", function () {
     document.querySelector('main').style.display = "flex"; // Mostrar contenido
   }, 1000);
 
+});
+
+window.addEventListener("load", function () {
+
   ajusteContenedorVertical();
 
 });
@@ -146,12 +151,18 @@ window.addEventListener("resize", function () {
 
 
 
-// ----------------------AJUSTE DE LOS CONTENEDORES ABSOLUTOS---------------------------//
+// ----------------------AJUSTE DINAMICO DE LOS CONTENEDORES ABSOLUTOS---------------------------//
 function ajusteContenedorVertical() {
   let bordeInferiorServicios = servicios.offsetTop + servicios.offsetHeight;
   document.documentElement.style.setProperty('--nosotros-top', bordeInferiorServicios + "px");
-  let bordeInferiorNosotros = bordeInferiorServicios + nosotros.offsetHeight;
-  document.documentElement.style.setProperty('--footer-top', bordeInferiorNosotros + "px");
+
+  //le aplica un padding del tamaño del footer +140px para que entre al final
+  document.documentElement.style.setProperty('--nosotros-paddingBotton', (footer.offsetHeight + 140) + "px");
+
+  let bordeInferiorNosotros = nosotros.offsetTop + nosotros.offsetHeight;
+  let posicionTopFooter = bordeInferiorNosotros - footer.offsetHeight;
+  document.documentElement.style.setProperty('--footer-top', posicionTopFooter + "px");
+
   document.documentElement.style.setProperty('--main-height', bordeInferiorNosotros + "px");
 };
 
@@ -246,6 +257,7 @@ const zoomInObserver = new IntersectionObserver((entries) => {
       entry.target.style.opacity = '1';
       entry.target.style.transform = 'scale(1)';
       entry.target.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+      ajusteContenedorVertical();
     } 
   });
 }, {
@@ -256,5 +268,6 @@ const zoomInObserver = new IntersectionObserver((entries) => {
 zoomInContents.forEach(content => {
   content.style.opacity = '0';
   content.style.transform = 'scale(0.8)';
+  ajusteContenedorVertical();
   zoomInObserver.observe(content);
 });
