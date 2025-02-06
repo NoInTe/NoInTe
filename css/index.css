@@ -319,18 +319,15 @@ main {
   z-index: 100;
 } */
 
-.desactivado {
-  opacity: 0;
-  transform: scale(0.95);
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
 .cabecera-titulo {
   top: 30vh;
   padding-left: 20px;
   padding-right: 20px;
   position: absolute;
   align-self: center;
+  opacity: 1;
+  transform: scale(1);
+  transition: opacity 0.5s ease, transform 0.5s ease;
   font-size: 4vw;
   text-align: center;
   color: #ffffff;
@@ -343,10 +340,19 @@ main {
   padding-right: 20px;
   position: absolute;
   align-self: center;
+  opacity:10;
+  transform: scale(1);
+  transition: opacity 1s ease, transform 1s ease;
   font-size: 2.3vw;
   text-align: center;
   color: #ffffff;
   z-index: 100;
+}
+
+.desactivado {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
 /*-------------------------------------------------------------------------------------------*/
