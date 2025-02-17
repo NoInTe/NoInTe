@@ -150,42 +150,86 @@ header {
 .navbar {
   height: 20%;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  padding: 0.5rem;
+
+  padding: 0 1%;
   background-color: #6989a36c;
   background: linear-gradient(0deg, rgba(255, 255, 255, 0.603), rgb(255, 255, 255));
 
 }
 
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 2rem;
-  position: fixed;
-  left: -110%;
-  top: 70px;
-  flex-direction: column;
-  width: 100%;
-  text-align: center;
-  transition: 750ms;
-}
+/*----------------------------------------------------------------------------------------------------------------------------------*/
 
-.nav-links a {
+.nav-links {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-basis: 0.40;
+  flex-grow: 0;
+  flex-shrink: 1;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  text-align: center;
+  list-style: none;
+  transition: 750ms;
+  background-color: #2860c2;
+}
+/* 
+.nav-links > a {
   text-decoration: none;
   color: #2b1364;
   font-size: 120%;
   font-weight: bold;
   transition: color 0.4s ease;
+} */
+
+.btnfos {
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 45px;
+  max-width: 160px;
+  padding: 0 2em;
+  position: relative;
+  text-transform: uppercase;
+  vertical-align: middle;
+  width: 100%;
 }
 
-.nav-links a:hover {
-  color: #00A4BF;
+.btnfos-5 {
+  border: 0 solid;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
+  outline: 1px solid;
+  outline-color: rgba(255, 255, 255, 0);
+  outline-offset: 0px;
+  text-shadow: none;
+  -webkit-transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+          transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
+  outline-color: rgba(255, 255, 255, 0.5);
+  outline-offset: 0px;
 }
 
+.btnfos-5:hover {
+  border: 1px solid;
+  box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.5), 0 0 20px rgba(255, 255, 255, 0.2);
+  outline-offset: 15px;
+  outline-color: rgba(255, 255, 255, 0);
+  text-shadow: 1px 1px 2px #427388;
+}
+
+
+/*----------------------------------------------------------------------------------------------------------------------------------*/
 .logo-nav {
+  width: 100%;
   display: flex;
+  flex-basis: 0.60;
+  flex-grow: 0;
+  flex-shrink: 1;
   align-items: center;
+  background-color: #6658ea;
 }
 
 .logo-nav img {
@@ -845,7 +889,7 @@ main {
     justify-content: space-between;
     align-items: center;
     width: auto;
-    margin-right: 20px;
+ 
   }
 
   .hamburger {
