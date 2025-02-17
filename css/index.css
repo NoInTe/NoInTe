@@ -148,7 +148,7 @@ header {
 }
 
 .navbar {
-  height: 70px;
+  height: 20%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -161,7 +161,7 @@ header {
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 1.5rem;
+  gap: 2rem;
   position: fixed;
   left: -110%;
   top: 70px;
@@ -174,7 +174,7 @@ header {
 .nav-links a {
   text-decoration: none;
   color: #2b1364;
-  font-size: 1.4vw;
+  font-size: 120%;
   font-weight: bold;
   transition: color 0.4s ease;
 }
@@ -210,14 +210,14 @@ header {
   }
 }
 
-.nombre-empresa span {
-  font-size: 1.8rem;
+.nombre-empresa div:first-child {
+  font-size: 160%;
   font-weight: bold;
   color: #2b1364;
 }
 
-.nombre-empresa p {
-  font-size: 1vw;
+.nombre-empresa div:last-child {
+  font-size: 100%;
   color: #2b1364;
   font-weight: bold;
 }

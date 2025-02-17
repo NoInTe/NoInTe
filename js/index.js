@@ -108,7 +108,7 @@ const contenidoExtra = {
                 <b>Tiempo de entrega:</b> Dependiendo de la complejidad del proyecto (plazo estimado por definir tras una evaluación inicial).<br><br>
               </p>
               
-              <h3 class="precio">Precio: desde $449.999 ARS</h3>
+              <h3 class="precio">Precio desde: $449.999 ARS</h3>
               <p>(precio personalizado según el alcance del proyecto). Se definirá un presupuesto detallado luego de la evaluación y reunión inicial con el cliente.<br><br>
               <b>¿Cómo solicitar este servicio?</b><br>
               Contáctenos directamente para agendar una reunión y evaluar su proyecto en detalle. Te proporcionaremos una propuesta ajustada a 
