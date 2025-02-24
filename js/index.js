@@ -4,6 +4,7 @@ const nosotros = document.querySelector(".nosotros");
 const footer = document.querySelector(".footer");
 // ------------------------------HEADER------------------------------------------------//
 //NAV
+const barraNavegacion = document.querySelector("header");
 const hamburger = document.querySelector(".hamburger");
 const cabeceraTitulo = document.querySelector(".cabecera-titulo");
 const cabeceraSubtitulo = document.querySelector(".cabecera-subtitulo");
@@ -143,6 +144,13 @@ window.addEventListener("resize", function () {
 
 // ----------------------AJUSTE DINAMICO DE LOS CONTENEDORES ABSOLUTOS---------------------------//
 function ajusteContenedorVertical() {
+  //ajuste entre los contenedores dentro del primer view port lo que conlleva al titulo y subtitulo
+  let espaciadoCabecera = ((window.innerHeight - barraNavegacion.offsetHeight) - (cabeceraTitulo.offsetHeight + cabeceraSubtitulo.offsetHeight)) / 3;
+  let topCabeceraTitulo = barraNavegacion.offsetHeight + espaciadoCabecera;
+  let topCabeceraSubtitulo = topCabeceraTitulo + cabeceraTitulo.offsetHeight + espaciadoCabecera;
+  document.documentElement.style.setProperty('--cabeceraTitulo-top', topCabeceraTitulo + "px");
+  document.documentElement.style.setProperty('--cabeceraSubtitulo-top', topCabeceraSubtitulo + "px");
+
   let bordeInferiorServicios = servicios.offsetTop + servicios.offsetHeight;
   document.documentElement.style.setProperty('--nosotros-top', bordeInferiorServicios + "px");
 
@@ -206,7 +214,7 @@ window.addEventListener("scroll", () => {
 });
 
 // Desplazamiento con efecto al hacer click en los enlaces
-document.querySelectorAll('.nav-links a').forEach(enlace => {
+document.querySelectorAll('.botones').forEach(enlace => {
   enlace.addEventListener('click', function (e) {
     e.preventDefault(); // Evita el salto instantáneo
     const seccion = document.querySelector(this.getAttribute('href'));
@@ -252,7 +260,7 @@ const zoomInObserver = new IntersectionObserver((entries) => {
       entry.target.style.transform = 'scale(1)';
       entry.target.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
       ajusteContenedorVertical();
-    } 
+    }
   });
 }, {
   threshold: 0.4 // Umbral al 80%
