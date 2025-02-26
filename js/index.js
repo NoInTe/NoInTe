@@ -177,21 +177,17 @@ hamburger.addEventListener("click", () => {
   cabeceraTitulo.classList.toggle("desactivado");
   cabeceraSubtitulo.classList.toggle("desactivado");
   navMenu.classList.toggle("active");
-  let menuOpen = navMenu.classList.contains("active");
-  let newMenuOpenStatus = menuOpen;
-  hamburger.setAttribute("aria-expanded", newMenuOpenStatus);
 });
 
 // Cerrar el menú cuando se haga clic en un enlace dentro del menú
-document.querySelectorAll(".nav-links a").forEach(n =>
+/* document.querySelectorAll(".nav-links a").forEach(n =>
   n.addEventListener("click", () => {
     hamburger.classList.remove("active");
     cabeceraTitulo.classList.remove("desactivado");
     cabeceraSubtitulo.classList.remove("desactivado");
     navMenu.classList.remove("active");
-    hamburger.setAttribute("aria-expanded", "false");
   })
-);
+); */
 
 // Cerrar el menú si se hace clic fuera de él
 document.addEventListener("click", (e) => {
@@ -200,7 +196,6 @@ document.addEventListener("click", (e) => {
     cabeceraTitulo.classList.remove("desactivado");
     cabeceraSubtitulo.classList.remove("desactivado");
     navMenu.classList.remove("active");
-    hamburger.setAttribute("aria-expanded", "false");
   }
 });
 
@@ -210,19 +205,18 @@ window.addEventListener("scroll", () => {
   cabeceraTitulo.classList.remove("desactivado");
   cabeceraSubtitulo.classList.remove("desactivado");
   navMenu.classList.remove("active");
-  hamburger.setAttribute("aria-expanded", "false");
 });
 
 // Desplazamiento con efecto al hacer click en los enlaces
-document.querySelectorAll('.botones').forEach(enlace => {
+document.querySelectorAll('.boton').forEach(enlace => {
   enlace.addEventListener('click', function (e) {
     e.preventDefault(); // Evita el salto instantáneo
-    const seccion = document.querySelector(this.getAttribute('href'));
+    let seccion = document.querySelector(this.getAttribute('href'));
     if (seccion) {
       // Desplazamiento suave
       window.scrollTo({
         top: seccion.offsetTop,
-        behavior: "smooth"
+        behavior: "instant"
       });
     }
   });
